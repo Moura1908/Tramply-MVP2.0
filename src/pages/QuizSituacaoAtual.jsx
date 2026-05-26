@@ -7,10 +7,14 @@ const QuizSituacaoAtual = () => {
   return (
     <div className="bg-deep-navy text-on-surface font-body-lg min-h-screen flex flex-col selection:bg-tropical-mint selection:text-black overflow-x-hidden">
 {/*  Transactional TopAppBar (Navigation Suppressed)  */}
-<header className="w-full h-16 flex items-center justify-center px-margin-mobile md:px-margin-desktop bg-deep-navy/90 backdrop-blur-md sticky top-0 z-40"><button onClick={(e) => { e.preventDefault(); }} className="w-10 h-10 rounded-full flex items-center justify-center text-medium-slate hover:text-tropical-mint hover:bg-surface-container-high transition-all"><span className="material-symbols-outlined">menu</span></button>
-<div className="text-tropical-mint font-headline-md text-headline-md font-bold tracking-tight">
-            Tramply
-        </div>
+<header className="w-full h-16 grid grid-cols-3 items-center px-margin-mobile md:px-margin-desktop bg-deep-navy/90 backdrop-blur-md sticky top-0 z-40">
+  <button onClick={() => navigate(-1)} className="justify-self-start w-10 h-10 rounded-full flex items-center justify-center text-medium-slate hover:text-tropical-mint hover:bg-surface-container-high transition-all" aria-label="Voltar">
+    <span className="material-symbols-outlined">arrow_back</span>
+  </button>
+  <div className="text-tropical-mint font-headline-md text-headline-md font-bold tracking-tight text-center">
+    Tramply
+  </div>
+  <div></div>
 </header>
 {/*  Main Content Canvas  */}
 <main className="flex-grow flex flex-col w-full max-w-3xl mx-auto px-margin-mobile md:px-margin-desktop py-unit-lg md:py-unit-xl">

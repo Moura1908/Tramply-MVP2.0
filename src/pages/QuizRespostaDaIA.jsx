@@ -34,7 +34,7 @@ const QuizRespostaDaIA = () => {
 {/*  Quiz Content  */}
 <div className="flex flex-col gap-unit-lg w-full">
 {/*  Question Title  */}
-<h1 className="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary text-center md:text-left leading-tight">
+<h1 className="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-eggshell text-center md:text-left leading-tight">
                     Em qual área você atua ou quer atuar?
                 </h1>
 {/*  User Input Display (Read-only state)  */}
@@ -48,7 +48,7 @@ const QuizRespostaDaIA = () => {
 {/*  AI Response Card  */}
 <div className="mt-4 bg-surface-container-high rounded-xl border-[2px] border-tropical-mint p-6 relative overflow-hidden flex flex-col gap-6 shadow-[0_0_20px_rgba(79,240,170,0.05)] animate-[slideUp_0.4s_ease-out_forwards]">
 {/*  Decorative subtle glow top right  */}
-<div className="absolute -top-12 -right-12 w-32 h-32 bg-tropical-mint/10 rounded-full blur-2xl"></div>
+
 {/*  AI Header  */}
 <div className="flex items-center gap-3 relative z-10">
 <div className="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center border border-tropical-mint/30 shadow-[0_0_10px_rgba(79,240,170,0.2)]">
@@ -72,7 +72,7 @@ const QuizRespostaDaIA = () => {
                             Sim, está correto
                         </button>
 {/*  Secondary Button  */}
-<button className="flex-1 border-[1.5px] border-medium-slate text-medium-slate bg-transparent hover:bg-medium-slate/10 font-label-md text-label-md rounded-full py-4 px-6 flex items-center justify-center transition-all duration-300 active:scale-95">
+<button className="flex-1 border-2 border-medium-slate text-medium-slate bg-transparent hover:bg-medium-slate/10 font-label-md text-label-md rounded-full py-4 px-6 flex items-center justify-center transition-all duration-300 active:scale-95">
                             Quero corrigir
                         </button>
 </div>

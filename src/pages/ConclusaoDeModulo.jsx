@@ -8,8 +8,8 @@ const ConclusaoDeModulo = () => {
     <>
 
 {/*  Ambient background glow  */}
-<div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-tropical-mint/5 rounded-full blur-[100px] pointer-events-none"></div>
-<div className="max-w-[800px] mx-auto px-margin-mobile md:px-margin-desktop py-unit-xl flex flex-col items-center justify-center min-h-full space-y-unit-xl relative z-10">
+
+<div className="max-w-[800px] mx-auto px-margin-mobile md:px-margin-desktop py-12 flex flex-col items-center gap-unit-xl relative z-10">
 {/*  Celebration Header  */}
 <div className="text-center space-y-unit-md animate-pop-in flex flex-col items-center">
 <div className="w-32 h-32 rounded-full bg-surface-container border border-surface-container-high flex items-center justify-center mb-unit-md animate-pulse-glow">
@@ -43,7 +43,7 @@ const ConclusaoDeModulo = () => {
 <h3 className="font-headline-sm text-[18px] text-on-surface mb-1">Estratégias de Divulgação</h3>
 <p className="font-body-sm text-body-sm text-on-surface-variant">Aprenda a comunicar seu novo preço e atrair os clientes certos.</p>
 </div>
-<Link to="/dashboard" className="whitespace-nowrap px-6 py-3 rounded-full bg-tropical-mint text-black font-label-md text-label-md hover:shadow-[0_0_15px_rgba(79,240,170,0.3)] transition-all flex items-center justify-center gap-2">
+<Link to="/dashboard" className="whitespace-nowrap px-6 py-3 rounded-full bg-tropical-mint text-black font-label-md text-label-md hover:shadow-md transition-all flex items-center justify-center gap-2">
                             Ir para: Estratégias de Divulgação
                             <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
 </Link>
@@ -63,7 +63,7 @@ const ConclusaoDeModulo = () => {
 {/*  Item 3: AI Suggestion  */}
 <div className="bg-surface-container-low border border-tropical-mint/20 rounded-xl p-gutter relative overflow-hidden flex flex-col justify-between">
 {/*  Soft AI glow background  */}
-<div className="absolute -right-10 -top-10 w-32 h-32 bg-medium-slate/10 rounded-full blur-2xl"></div>
+
 <div className="relative z-10">
 <div className="flex items-center gap-2 mb-unit-md">
 <span className="material-symbols-outlined text-medium-slate">auto_awesome</span>

@@ -7,20 +7,22 @@ const QuizInicio = () => {
   return (
     <div className="bg-black text-on-surface min-h-screen flex flex-col antialiased overflow-x-hidden">
 {/*  Top Navigation for Transactional/Isolated Flow  */}
-<header className="w-full flex items-center justify-between px-margin-desktop py-unit-md bg-background/80 backdrop-blur-md fixed top-0 z-50"><button onClick={(e) => { e.preventDefault(); }} className="w-10 h-10 rounded-full flex items-center justify-center text-medium-slate hover:text-tropical-mint hover:bg-surface-container-high transition-all"><span className="material-symbols-outlined">menu</span></button>
-<div className="font-headline-md text-headline-md font-bold text-tropical-mint">
-            Tramply
-        </div>
-<button onClick={() => navigate(-1)} className="font-label-md text-label-md text-medium-slate hover:text-eggshell transition-colors flex items-center gap-2">
-            Sair <span className="material-symbols-outlined text-[18px]">logout</span>
-</button>
+<header className="w-full flex items-center justify-between px-margin-desktop py-unit-md bg-background/80 backdrop-blur-md fixed top-0 z-50">
+  <button onClick={() => navigate(-1)} className="w-10 h-10 rounded-full flex items-center justify-center text-medium-slate hover:text-tropical-mint hover:bg-surface-container-high transition-all" aria-label="Voltar">
+    <span className="material-symbols-outlined">arrow_back</span>
+  </button>
+  <div className="font-headline-md text-headline-md font-bold text-tropical-mint">
+    Tramply
+  </div>
+  <button onClick={() => navigate(-1)} className="font-label-md text-label-md text-medium-slate hover:text-eggshell transition-colors flex items-center gap-2">
+    Sair <span className="material-symbols-outlined text-[18px]">logout</span>
+  </button>
 </header>
 {/*  Main Canvas Content  */}
 <main className="flex-grow flex flex-col items-center justify-center pt-[80px] px-margin-mobile md:px-margin-desktop relative">
 {/*  Background Ambient Glow  */}
 <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-<div className="absolute top-1/4 left-1/4 w-[400px] h-[400px] bg-tropical-mint/5 rounded-full blur-[100px]"></div>
-<div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-medium-slate/5 rounded-full blur-[120px]"></div>
+
 </div>
 <div className="z-10 w-full max-w-2xl flex flex-col gap-unit-xl">
 {/*  Progress Bar Container  */}
@@ -56,11 +58,7 @@ const QuizInicio = () => {
 <span className="font-headline-sm text-headline-sm text-eggshell group-hover:text-white transition-colors">Quero que a plataforma me ajude a descobrir</span>
 </button>
 </div>
-{/*  Navigation Actions (Optional continuation hook, though clicking cards often advances directly in this pattern)  */}
-<div className="flex justify-between items-center w-full mt-unit-md opacity-0 animate-[fadeIn_1s_ease-out_0.5s_forwards]">
-{/*  Empty div to push 'Próximo' to the right if needed later, or a back button  */}
-<div></div>
-</div>
+
 </div>
 </main>
 

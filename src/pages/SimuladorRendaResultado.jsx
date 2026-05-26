@@ -1,8 +1,42 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import useSimuladorStore from '../store/useSimuladorStore';
 
 const SimuladorRendaResultado = () => {
   const navigate = useNavigate();
+  const { incomes } = useSimuladorStore();
+
+  const { garantido, provavel, otimista } = useMemo(() => {
+    let baseGarantido = 0;
+    let baseIncertas = 0;
+
+    incomes.forEach(income => {
+      let monthlyVal = income.amount;
+      if (income.frequency === 'semanal') monthlyVal = income.amount * 4;
+      if (income.frequency === 'quinzenal') monthlyVal = income.amount * 2;
+      if (income.frequency === 'diaria') monthlyVal = income.amount * 30;
+
+      if (income.isGuaranteed) {
+        baseGarantido += monthlyVal;
+      } else {
+        baseIncertas += monthlyVal;
+      }
+    });
+
+    const cGarantido = baseGarantido + (baseIncertas * 0.3); // 30% das incertas
+    const cProvavel = baseGarantido + (baseIncertas * 0.7); // 70% das incertas
+    const cOtimista = baseGarantido + baseIncertas + (baseGarantido * 0.2); // 100% incertas + 20% garantidas extra
+
+    return {
+      garantido: cGarantido,
+      provavel: cProvavel,
+      otimista: cOtimista
+    };
+  }, [incomes]);
+
+  const formatCurrency = (value) => {
+    return new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(value);
+  };
 
   return (
     <>
@@ -32,7 +66,7 @@ const SimuladorRendaResultado = () => {
 <p className="font-body-sm text-body-sm text-on-surface-variant mb-unit-lg flex-1">Considera imprevistos operacionais e menor volume de demandas no período.</p>
 <div>
 <span className="font-label-md text-label-md text-medium-slate block mb-1">Faturamento Estimado</span>
-<div className="font-headline-lg text-headline-lg text-on-surface">R$ 1.200,00</div>
+<div className="font-headline-lg text-headline-lg text-on-surface">{formatCurrency(garantido)}</div>
 </div>
 </div>
 {/*  Provável (Yellow/Warning tint - mapped to tertiary-container vibe)  */}
@@ -49,7 +83,7 @@ const SimuladorRendaResultado = () => {
 <p className="font-body-sm text-body-sm text-on-surface-variant mb-unit-lg flex-1">Projeção realista baseada na sua média histórica e tendências de mercado atuais.</p>
 <div>
 <span className="font-label-md text-label-md text-medium-slate block mb-1">Faturamento Estimado</span>
-<div className="font-headline-lg text-headline-lg text-eggshell">R$ 1.850,00</div>
+<div className="font-headline-lg text-headline-lg text-eggshell">{formatCurrency(provavel)}</div>
 </div>
 </div>
 {/*  Otimista (Green/Success tint)  */}
@@ -62,7 +96,7 @@ const SimuladorRendaResultado = () => {
 <p className="font-body-sm text-body-sm text-on-surface-variant mb-unit-lg flex-1">Cenário ideal assumindo capacidade máxima de produção e captação de novos clientes.</p>
 <div>
 <span className="font-label-md text-label-md text-medium-slate block mb-1">Faturamento Estimado</span>
-<div className="font-headline-lg text-headline-lg text-on-surface">R$ 2.400,00</div>
+<div className="font-headline-lg text-headline-lg text-on-surface">{formatCurrency(otimista)}</div>
 </div>
 </div>
 </div>
@@ -75,28 +109,28 @@ const SimuladorRendaResultado = () => {
 <span className="material-symbols-outlined text-[16px]">shield</span>
 <span className="font-body-sm text-body-sm">Renda mínima garantida</span>
 </div>
-<span className="font-headline-sm text-headline-sm text-on-surface">R$ 1.200,00</span>
+<span className="font-headline-sm text-headline-sm text-on-surface">{formatCurrency(garantido)}</span>
 </div>
 <div className="flex flex-col gap-1 md:pl-unit-lg pt-4 md:pt-0">
 <div className="flex items-center gap-2 text-on-surface-variant mb-1">
 <span className="material-symbols-outlined text-[16px]">flag</span>
 <span className="font-body-sm text-body-sm">Renda segura para planejar</span>
 </div>
-<span className="font-headline-sm text-headline-sm text-eggshell">R$ 1.850,00</span>
+<span className="font-headline-sm text-headline-sm text-eggshell">{formatCurrency(provavel)}</span>
 </div>
 <div className="flex flex-col gap-1 md:pl-unit-lg pt-4 md:pt-0">
 <div className="flex items-center gap-2 text-on-surface-variant mb-1">
 <span className="material-symbols-outlined text-[16px]">difference</span>
 <span className="font-body-sm text-body-sm">Diferença entre cenários</span>
 </div>
-<span className="font-headline-sm text-headline-sm text-on-surface">R$ 1.200,00</span>
+<span className="font-headline-sm text-headline-sm text-on-surface">{formatCurrency(otimista - garantido)}</span>
 </div>
 <div className="flex flex-col gap-1 md:pl-unit-lg pt-4 md:pt-0">
 <div className="flex items-center gap-2 text-on-surface-variant mb-1">
 <span className="material-symbols-outlined text-[16px]">calendar_month</span>
 <span className="font-body-sm text-body-sm">Estimativa anual (Provável)</span>
 </div>
-<span className="font-headline-sm text-headline-sm text-tropical-mint">R$ 22.200,00</span>
+<span className="font-headline-sm text-headline-sm text-tropical-mint">{formatCurrency(provavel * 12)}</span>
 </div>
 </div>
 </div>

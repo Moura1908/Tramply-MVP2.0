@@ -1,120 +1,80 @@
-# Tramply — Protótipo MVP
+# Tramply — MVP Universitário
 
-> Protótipo universitário da plataforma **Tramply**, uma solução de capacitação e gestão financeira para microempreendedores individuais (MEIs).
-
----
-
-## 📋 Sobre o Projeto
-
-A Tramply é uma plataforma que combina trilhas de aprendizado personalizadas, simuladores financeiros e um hub de oportunidades para MEIs. Este repositório contém o **protótipo de alta fidelidade** desenvolvido como MVP para apresentação acadêmica.
-
-As telas foram projetadas no **Google Stitch** e navegam por uma jornada completa do usuário, desde o onboarding até o consumo de conteúdo, simuladores financeiros e área de oportunidades.
+> Uma plataforma de capacitação, gestão financeira e oportunidades para Microempreendedores Individuais (MEIs).
 
 ---
 
-## 🗺️ Jornada do Usuário (27 telas)
+## Sobre o Projeto
 
-| # | Seção | Tela |
-|---|-------|------|
-| 1-2 | **Entrada** | Login → Cadastro |
-| 3-9 | **Quiz de Onboarding** | Situação Atual → Objetivos → Setor → IA → Perfil → Início → Resultado |
-| 10-12 | **Dashboard** | Dashboard Ativo → Dashboard Sem Trilha → Minhas Trilhas |
-| 13-14 | **Conteúdo** | Módulo de Trilha → Conclusão de Módulo |
-| 15-19 | **Simuladores** | Início → Renda (Entrada/Resultado) → Despesas (Entrada/Análise) |
-| 20-25 | **Oportunidades** | MEIs → Caso de Estudo → Comunidade → Ferramentas → Eventos → Bancos |
-| 26-27 | **Perfil** | Perfil do Empreendedor → Configurações |
+A **Tramply** nasceu com o objetivo de apoiar o MEI em sua jornada, oferecendo um ecossistema que combina educação prática, organização financeira (simuladores de cenários) e conexão com o mercado (hub de oportunidades e networking).
+
+Este repositório contém o **Protótipo de Alta Fidelidade (MVP)** desenvolvido para apresentação acadêmica e validação de conceito. O foco do projeto foi construir uma experiência do usuário (UX) intuitiva, humanizada e livre de fricções, ajudando pequenos empreendedores a formalizar, gerir e expandir seus negócios.
 
 ---
 
-## 🚀 Como Rodar Localmente
+## Tecnologias Utilizadas
 
-### Opção 1 — Visualizar o protótipo diretamente (sem build)
+A arquitetura do MVP foi construída com foco em performance e modularidade no ecossistema moderno de desenvolvimento Front-End:
+
+- **React 19** — Biblioteca principal de UI.
+- **Vite** — Build tool ágil e otimizada.
+- **Tailwind CSS v4** — Estilização utilitária escalável.
+- **Zustand** — Gerenciamento de estado global (simuladores e configuração).
+- **React Router Dom v7** — Roteamento das jornadas do usuário.
+
+---
+
+## Jornada do Usuário (Fluxos Principais)
+
+O projeto engloba um fluxo completo com **27 telas**, organizado nas seguintes trilhas:
+
+1. **Onboarding & Diagnóstico:** Login → Quiz de Situação Atual → Objetivos → Resposta da IA → Perfil do Empreendedor.
+2. **Dashboard & Aprendizado:** Dashboard Dinâmico (com/sem trilha ativa) → Módulos de Estudo gamificados.
+3. **Simuladores Financeiros:** Projeções realistas (Conservador, Provável, Otimista) de renda e despesas.
+4. **Hub de Oportunidades:** Casos de Estudo (Ex: Análise de MEIs reais) → Comunidade de Networking → Eventos → Ferramentas recomendadas.
+
+---
+
+## Como Rodar Localmente
+
+Siga as instruções abaixo para rodar o projeto em sua máquina:
+
+### 1. Pré-requisitos
+- Ter o [Node.js](https://nodejs.org/) instalado (versão 18+ recomendada).
+
+### 2. Instalação
+
+Clone o repositório e acesse a pasta do projeto:
 
 ```bash
-# Abra no browser diretamente:
-open stitch_screens/index.html
-# ou no Linux:
-xdg-open stitch_screens/index.html
+git clone <url-do-repositorio>
+cd tramply-prototipo
 ```
 
-> O arquivo `stitch_screens/index.html` é o roteador da jornada completa.  
-> Use **← →** no teclado ou os botões de seção para navegar entre as telas.
-
-### Opção 2 — Dev server local (recomendado para desenvolvimento futuro)
+Instale as dependências:
 
 ```bash
-# Instalar dependências
 npm install
+```
 
-# Iniciar servidor de desenvolvimento
+### 3. Executando o Servidor de Desenvolvimento
+
+```bash
 npm run dev
 ```
 
-Acesse `http://localhost:5173` no browser.
+Acesse [http://localhost:5173](http://localhost:5173) em seu navegador para explorar o protótipo.
 
 ---
 
-## 📁 Estrutura do Repositório
+## Design System: "Tramply Vision"
 
-```
-tramply-prototipo/
-├── stitch_screens/          # Telas exportadas do Google Stitch (HTML puro)
-│   ├── index.html           # Roteador da jornada (ponto de entrada do protótipo)
-│   └── Tramply_*.html       # 27 telas individuais
-│
-├── docs/                    # Documentação do projeto
-│   ├── DESIGN.md            # Sistema de design (tokens, cores, tipografia)
-│   └── escopo.md            # Escopo e requisitos do projeto
-│
-├── scripts/                 # Scripts de desenvolvimento e utilitários
-│   ├── download_screens.py  # Script para re-baixar telas do Stitch
-│   └── ...                  # Outros scripts auxiliares
-│
-├── package.json             # Configuração do projeto Node
-├── vite.config.js           # Configuração do Vite
-├── tailwind.config.js       # Configuração do Tailwind CSS
-├── tsconfig.json            # Configuração do TypeScript
-└── postcss.config.js        # Configuração do PostCSS
-```
+A identidade visual foi desenhada para transmitir seriedade sem perder a empatia e a inovação.
+
+- **Cores Principais:** 
+  - `Deep Navy` (`#000f3b`): Fundo principal, transmite solidez e confiança.
+  - `Tropical Mint` (`#4ff0aa`): Cor de destaque (calls-to-action), evoca crescimento e modernidade.
+- **Tipografia:** `Plus Jakarta Sans` (garante excelente legibilidade em telas pequenas e grandes).
+- **Acessibilidade:** Contrastes testados e elementos de navegação amigáveis para uso prolongado.
 
 ---
-
-## 🎨 Design System
-
-O projeto utiliza o design system **"Tramply Vision"**:
-
-- **Cores**: Deep Navy (`#000f3b`) como fundo, Tropical Mint (`#4ff0aa`) como accent primário, Medium Slate (`#6d77fa`) como secundário
-- **Tipografia**: **Sora** (headlines) + **Plus Jakarta Sans** (corpo e labels)
-- **Estilo**: Premium Functional Minimalism com dark mode
-
-Consulte [`docs/DESIGN.md`](./docs/DESIGN.md) para os tokens completos.
-
----
-
-## 🛠️ Tecnologias
-
-| Tecnologia | Uso |
-|-----------|-----|
-| Google Stitch | Design e geração das telas |
-| HTML + Tailwind CSS | Estrutura das telas exportadas |
-| Vite | Bundler (para desenvolvimento futuro) |
-| TypeScript | Tipagem (para desenvolvimento futuro) |
-
----
-
-## 📦 Re-baixar as Telas do Stitch
-
-Caso precise atualizar as telas a partir do Stitch original:
-
-```bash
-python3 scripts/download_screens.py
-```
-
----
-
-## 👥 Equipe
-
-Projeto universitário — MVP para apresentação acadêmica.
-# MVP-Trampy
-# MVP-Trampy.1
-# Tramply-MVP2.0

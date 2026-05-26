@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import useTrilhaStore from '../store/useTrilhaStore';
 
 const QuizSetorDeAtuacao = () => {
   const navigate = useNavigate();
-  const [selectedSector, setSelectedSector] = useState(null);
+  const { sector: selectedSector, setSector: setSelectedSector } = useTrilhaStore();
 
   return (
     <div className="bg-background text-on-background min-h-screen flex flex-col font-sans antialiased selection:bg-tropical-mint/30 selection:text-tropical-mint overflow-x-hidden">
@@ -84,7 +85,7 @@ const QuizSetorDeAtuacao = () => {
 </button>
 <div className="hidden px-unit-md pb-unit-md" id="ai-content">
 <div className="relative mt-2">
-<textarea className="w-full bg-surface-container-low text-eggshell font-body-sm text-body-sm placeholder:text-outline border border-outline-variant/30 rounded-xl p-4 focus:ring-1 focus:ring-tropical-mint focus:border-tropical-mint resize-none h-28 transition-colors outline-none" id="custom-area-input" maxlength="200" placeholder="Ex: sou tatuadora especializada em fine line..."></textarea>
+<textarea className="w-full bg-surface-container-low text-eggshell font-body-sm text-body-sm placeholder:text-outline border border-outline-variant/30 rounded-xl p-4 focus:ring-1 focus:ring-tropical-mint focus:border-tropical-mint resize-none h-28 transition-colors outline-none" id="custom-area-input" maxLength="200" placeholder="Ex: sou tatuadora especializada em fine line..."></textarea>
 </div>
 <div className="flex justify-between items-center mt-unit-sm">
 <span className="font-label-md text-label-md text-medium-slate" id="char-count">0/200</span>

@@ -7,41 +7,18 @@ const ModuloDeTrilha = () => {
   return (
     <>
 
-{/*  TopAppBar  */}
-<header className="flex items-center justify-between px-unit-lg w-full z-40 bg-background/80 backdrop-blur-md docked full-width top-0 h-16 sticky"><button onClick={(e) => { e.preventDefault(); }} className="w-10 h-10 rounded-full flex items-center justify-center text-medium-slate hover:text-tropical-mint hover:bg-surface-container-high transition-all"><span className="material-symbols-outlined">menu</span></button>
-{/*  Mobile Menu Toggle  */}
-<button className="md:hidden text-tropical-mint p-2 -ml-2">
-<span className="material-symbols-outlined">menu</span>
-</button>
-<div className="flex items-center gap-unit-md w-full max-w-md">
-<div className="relative w-full">
-<span className="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-medium-slate">search</span>
-<input className="w-full bg-surface-container-high border-none rounded-lg pl-10 pr-4 py-2 font-body-sm text-body-sm text-eggshell focus:ring-1 focus:ring-tropical-mint focus:outline-none placeholder-outline-variant transition-all" placeholder="Buscar trilhas, módulos..." type="text" />
-</div>
-</div>
-<div className="flex items-center gap-unit-md ml-auto">
-<button className="text-medium-slate hover:text-tropical-mint transition-colors p-2 rounded-full hover:bg-surface-container-high">
-<span className="material-symbols-outlined" data-icon="notifications">notifications</span>
-</button>
-<button className="text-medium-slate hover:text-tropical-mint transition-colors p-2 rounded-full hover:bg-surface-container-high">
-<span className="material-symbols-outlined" data-icon="settings">settings</span>
-</button>
-<div className="w-8 h-8 rounded-full bg-deep-navy border border-outline-variant overflow-hidden ml-2 md:hidden">
-<img alt="MEI Avatar" className="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKFhcCk2LlsPPzr3rm8-O4hXfmG8pAYcEpZDgIUfclJEZuVJPKWFbUFbkadT7vxa4YUCQghhW5_FQuiroHpgNLZ135y7OSK-UPYI7lT6iJ-dBMmLX0vgqI1yq7SfEWK6T9i-Ijp5lzmRL_AZNoYmSo_uuQAitiUbmZArjFRKfYnZl6txhGb_lb5sQjgDHTFovcSpZitiFnWbQTV41g7qwmvM5cKfLquN-NGT5_aMIJ8b-e6D6KkXY5SkGAnG1jztSsMUpF80EaH_M" />
-</div>
-</div>
-<button onClick={(e) => { e.preventDefault(); }} className="xl:hidden w-10 h-10 rounded-full flex items-center justify-center text-medium-slate hover:text-tropical-mint hover:bg-surface-container-high transition-all ml-2"><span className="material-symbols-outlined">menu_open</span></button></header>
+
 {/*  Content Area  */}
-<div className="p-margin-mobile md:p-margin-desktop flex flex-col gap-unit-lg max-w-[900px] w-full mx-auto xl:mr-[340px]">
+<div className="flex flex-col gap-unit-lg max-w-[900px] w-full mx-auto">
 {/*  Breadcrumb  */}
 <nav className="flex items-center gap-2 text-on-surface-variant font-label-md text-label-md">
-<Link className="hover:text-tropical-mint transition-colors" to="#">Trilha: Crescer</Link>
+<Link className="hover:text-tropical-mint transition-colors" to="/minhas-trilhas">Trilha: Crescer</Link>
 <span className="material-symbols-outlined text-[16px]">chevron_right</span>
 <span className="text-eggshell">Módulo 3: Precificação para MEI</span>
 </nav>
 {/*  Hero Section  */}
 <section className="flex flex-col gap-unit-md">
-<h2 className="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-tropical-mint">Precificação para MEI</h2>
+<h2 className="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-eggshell">Precificação para MEI</h2>
 <div className="bg-surface-container rounded-xl p-unit-md border border-outline-variant/20 flex flex-col gap-unit-sm">
 <div className="flex items-center justify-between text-on-surface-variant font-label-md text-label-md mb-2">
 <span className="">Progresso do Módulo</span>

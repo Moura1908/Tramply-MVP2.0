@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import useTrilhaStore from '../store/useTrilhaStore';
 
 const QuizPerfilERitmo = () => {
   const navigate = useNavigate();
-  const [expSelected, setExpSelected] = useState(null);
-  const [timeSelected, setTimeSelected] = useState(null);
+  const { experience: expSelected, setExperience: setExpSelected, timeToDedicate: timeSelected, setTimeToDedicate: setTimeSelected } = useTrilhaStore();
 
   return (
     <div className="bg-background text-on-surface min-h-screen flex flex-col font-body-sm antialiased selection:bg-tropical-mint selection:text-black overflow-x-hidden">
@@ -93,8 +93,7 @@ const QuizPerfilERitmo = () => {
 </main>
 {/*  Background Atmospheric Glow  */}
 <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden flex justify-center items-center opacity-20">
-<div className="absolute w-[800px] h-[800px] bg-medium-slate/20 rounded-full blur-[120px] top-[-20%] right-[-10%] mix-blend-screen"></div>
-<div className="absolute w-[600px] h-[600px] bg-tropical-mint/10 rounded-full blur-[100px] bottom-[-10%] left-[-10%] mix-blend-screen"></div>
+
 </div>
 {/*  Micro-interaction Script  */}
     </div>

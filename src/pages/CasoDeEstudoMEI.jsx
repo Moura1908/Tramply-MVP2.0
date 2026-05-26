@@ -32,7 +32,7 @@ const CasoDeEstudoMEI = () => {
 <div className="absolute left-[23px] top-[40px] bottom-[40px] w-0.5 bg-surface-variant hidden sm:block"></div>
 {/*  Timeline Item: O empreendimento  */}
 <div className="relative flex flex-col sm:flex-row gap-6">
-<div className="flex-shrink-0 relative z-10 hidden sm:flex items-center justify-center w-12 h-12 rounded-full bg-deep-navy border border-tropical-mint text-tropical-mint shadow-[0_0_10px_rgba(79,240,170,0.1)]">
+<div className="flex-shrink-0 relative z-10 hidden sm:flex items-center justify-center w-12 h-12 rounded-full bg-deep-navy border border-tropical-mint text-tropical-mint shadow-sm">
 <span className="material-symbols-outlined icon-filled">store</span>
 </div>
 <div className="flex-1 bg-deep-navy border border-surface-variant rounded-xl p-6 sm:p-8 hover:border-tropical-mint/50 transition-colors group">
@@ -70,7 +70,7 @@ const CasoDeEstudoMEI = () => {
 </div>
 {/*  Special Section: Sinais de Falha  */}
 <div className="relative flex flex-col sm:flex-row gap-6 mt-12">
-<div className="flex-shrink-0 relative z-10 hidden sm:flex items-center justify-center w-12 h-12 rounded-full bg-error-container/20 border border-error/50 text-error shadow-[0_0_15px_rgba(255,180,171,0.2)]">
+<div className="flex-shrink-0 relative z-10 hidden sm:flex items-center justify-center w-12 h-12 rounded-full bg-error-container/20 border border-error/50 text-error shadow-sm">
 <span className="material-symbols-outlined">warning</span>
 </div>
 <div className="flex-1 bg-gradient-to-br from-surface-container-high to-error-container/5 border border-error/20 rounded-xl p-6 sm:p-8">
@@ -132,7 +132,7 @@ const CasoDeEstudoMEI = () => {
                     </button>
 </div>
 </div>
-
+</div>
     </>
   );
 };

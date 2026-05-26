@@ -5,34 +5,11 @@ const Bancos = () => {
   return (
     <>
 
-{/*  TopAppBar (Shared Component)  */}
-<header className="flex items-center justify-between px-unit-lg w-full z-40 bg-background/80 backdrop-blur-md docked full-width top-0 h-16 sticky top-0"><button onClick={(e) => { e.preventDefault(); }} className="w-10 h-10 rounded-full flex items-center justify-center text-medium-slate hover:text-tropical-mint hover:bg-surface-container-high transition-all"><span className="material-symbols-outlined">menu</span></button>
-<div className="flex items-center gap-4">
-<h2 className="font-headline-sm text-headline-sm text-on-surface md:hidden">Oportunidades</h2>
-{/*  Search visually hidden for layout but present as requested conceptually  */}
-<div className="hidden md:flex items-center bg-surface-container-low px-4 py-2 rounded-full border border-outline-variant/20">
-<span className="material-symbols-outlined text-medium-slate text-sm">search</span>
-<input className="bg-transparent border-none text-body-sm text-on-surface focus:ring-0 w-48 placeholder-medium-slate/50" placeholder="Buscar serviços..." type="text" />
-</div>
-</div>
-<div className="flex items-center gap-4">
-<button className="text-medium-slate hover:text-tropical-mint transition-colors relative">
-<span className="material-symbols-outlined">notifications</span>
-<span className="absolute top-0 right-0 w-2 h-2 bg-tropical-mint rounded-full"></span>
-</button>
-<button className="text-medium-slate hover:text-tropical-mint transition-colors">
-<span className="material-symbols-outlined">settings</span>
-</button>
-<div className="w-8 h-8 rounded-full bg-surface-container-high border border-outline-variant/20 overflow-hidden ml-2">
-<img alt="MEI Avatar" className="w-full h-full object-cover" data-alt="A professional headshot of a confident young entrepreneur. The lighting is soft and flattering, creating a premium corporate aesthetic. The overall tone is warm and approachable, fitting a high-quality humanized tech platform. Deep navy background accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCs4lBWipJrtlT64fzavEtuig4_R152XGCYZd1vUXUXr2vPeNym05NlzqvuNYZX0fNsuANxLc2X61mgqGHFygm77inb5ptfjB-l_1G0inxI3uf2sQ3_b3QDIl4LA5R23fITjHocG_GEQ6v9CPaJKErtltaj64o6rWgAJTc-iIlyriHysuZN2BBld6UDO0gX7-87EhrphKFDOq6ZA8QujRDciJyGg9wQKkmRlylT-qIC6-ejWWK0A55cTM2_MCBYYdV4PO10SkKh2RY" />
-</div>
-</div>
-</header>
 {/*  Page Canvas  */}
-<div className="flex-1 p-margin-mobile md:p-margin-desktop max-w-container-max mx-auto w-full">
+<div className="flex-1 max-w-container-max mx-auto w-full">
 {/*  Hero Section  */}
 <section className="mb-unit-xl relative">
-<div className="absolute inset-0 bg-gradient-to-r from-surface-container to-background rounded-2xl opacity-50 blur-xl"></div>
+
 <div className="relative bg-surface-container-low border border-outline-variant/20 rounded-2xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-between overflow-hidden">
 <div className="z-10 max-w-2xl">
 <div className="inline-flex items-center gap-2 px-3 py-1 bg-surface-container-high rounded-full border border-tropical-mint/30 mb-6">
@@ -44,7 +21,7 @@ const Bancos = () => {
                             Comparamos contas Pessoas Jurídicas, maquininhas sem aluguel e microcrédito facilitado para você investir no seu crescimento com segurança.
                         </p>
 <div className="flex flex-wrap gap-4">
-<button className="bg-tropical-mint text-black font-label-md text-label-md py-3 px-6 rounded-full hover:shadow-[0_0_12px_rgba(79,240,170,0.4)] transition-all flex items-center gap-2">
+<button className="bg-tropical-mint text-black font-label-md text-label-md py-3 px-6 rounded-full hover:shadow-md transition-all flex items-center gap-2">
 <span className="material-symbols-outlined text-sm" style={{ fontVariationSettings: "'FILL' 1" }}>headset_mic</span>
                                 Falar com Especialista
                             </button>
@@ -55,7 +32,7 @@ const Bancos = () => {
 </div>
 {/*  Hero Graphic Concept  */}
 <div className="hidden lg:block relative w-64 h-64 mt-8 md:mt-0">
-<div className="absolute inset-0 bg-tropical-mint/10 rounded-full blur-2xl"></div>
+
 <div className="relative w-full h-full border border-outline-variant/30 rounded-2xl bg-surface-container backdrop-blur-sm p-6 transform rotate-3 flex flex-col gap-4 shadow-lg">
 <div className="flex items-center justify-between mb-2">
 <div className="w-10 h-10 rounded-full bg-surface-bright flex items-center justify-center">
@@ -173,7 +150,7 @@ const Bancos = () => {
 <div className="col-span-1 md:col-span-12 relative rounded-[12px] overflow-hidden border border-outline-variant/20 group">
 <div className="absolute inset-0 bg-surface-container-high/80 backdrop-blur-md z-0"></div>
 {/*  Decorative subtle gradient  */}
-<div className="absolute top-0 right-1/4 w-64 h-64 bg-medium-slate/10 rounded-full blur-3xl z-0"></div>
+
 <div className="relative z-10 p-8 md:p-10 flex flex-col md:flex-row items-center justify-between gap-8">
 <div className="md:w-1/2">
 <div className="flex items-center gap-3 mb-4">

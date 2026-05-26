@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import useTrilhaStore from '../store/useTrilhaStore';
 
 const QuizObjetivos = () => {
   const navigate = useNavigate();
-  const [selected, setSelected] = useState([]);
+  const { objectives: selected, toggleObjective: toggle } = useTrilhaStore();
 
   const options = [
     'Formalizar meu negócio (abrir MEI, CNPJ)',
@@ -12,8 +13,6 @@ const QuizObjetivos = () => {
     'Conseguir crédito ou investimento',
     'Entender meus direitos como trabalhador',
   ];
-
-  const toggle = (i) => setSelected(prev => prev.includes(i) ? prev.filter(x => x !== i) : [...prev, i]);
 
   return (
     <div className="bg-background text-on-background font-body-sm min-h-screen flex flex-col selection:bg-tropical-mint selection:text-black overflow-x-hidden">

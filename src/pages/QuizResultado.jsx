@@ -6,10 +6,20 @@ const QuizResultado = () => {
 
   return (
     <div className="bg-background text-on-background min-h-screen flex flex-col items-center justify-center p-margin-mobile md:p-margin-desktop selection:bg-tropical-mint selection:text-black overflow-x-hidden">
-{/*  Suppressed Global Navigation as per rules for transactional/result screens  */}
+
+{/*  Header de navegação fora do main  */}
+<header className="w-full max-w-container-max mx-auto flex items-center justify-between mb-8">
+  <button onClick={() => navigate(-1)} className="flex items-center gap-2 text-medium-slate hover:text-tropical-mint transition-colors group" aria-label="Voltar ao quiz">
+    <span className="material-symbols-outlined text-[20px] group-hover:-translate-x-1 transition-transform">arrow_back</span>
+    <span className="font-label-md text-label-md">Voltar</span>
+  </button>
+  <div className="font-headline-md font-bold text-tropical-mint">Tramply</div>
+  <div className="w-24"></div>
+</header>
+
 <main className="w-full max-w-container-max mx-auto flex flex-col gap-unit-xl animate-fade-in-up">
 {/*  Header & Progress  */}
-<header className="flex flex-col items-center justify-center text-center gap-unit-md mt-12 md:mt-0"><button onClick={(e) => { e.preventDefault(); }} className="w-10 h-10 rounded-full flex items-center justify-center text-medium-slate hover:text-tropical-mint hover:bg-surface-container-high transition-all"><span className="material-symbols-outlined">menu</span></button>
+<div className="flex flex-col items-center justify-center text-center gap-unit-md">
 <h1 className="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-eggshell">
                 Seu perfil está pronto!
             </h1>
@@ -20,14 +30,14 @@ const QuizResultado = () => {
 </div>
 <span className="material-symbols-outlined text-tropical-mint text-sm">check_circle</span>
 </div>
-</header>
+</div>
 {/*  Bento Grid Layout (60/40 split approximation using 12 col grid)  */}
 <div className="grid grid-cols-1 lg:grid-cols-12 gap-gutter w-full">
 {/*  Left Column: Primary Recommendation (60%)  */}
 <div className="lg:col-span-7 flex">
 <article className="w-full bg-surface-container rounded-2xl border border-outline-variant/20 p-8 md:p-10 flex flex-col gap-8 relative overflow-hidden group">
 {/*  Decorative subtle background glow  */}
-<div className="absolute -top-24 -right-24 w-64 h-64 bg-tropical-mint/10 rounded-full blur-[80px] pointer-events-none transition-opacity duration-500 group-hover:opacity-100 opacity-50"></div>
+
 <div className="flex items-center gap-4">
 <div className="w-16 h-16 rounded-xl bg-surface-container-high border border-outline-variant/30 flex items-center justify-center shadow-lg">
 <span className="material-symbols-outlined text-4xl text-tropical-mint">trending_up</span>

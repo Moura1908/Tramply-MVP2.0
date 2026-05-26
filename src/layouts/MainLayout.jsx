@@ -10,7 +10,7 @@ const MainLayout = () => {
   const [isAsideOpen, setIsAsideOpen] = useState(false);
 
   return (
-    <div className="bg-background text-on-background font-body-lg antialiased overflow-x-hidden min-h-screen">
+    <div className="bg-background text-on-background font-body-lg antialiased min-h-screen flex flex-col w-full">
       <Header
         toggleNav={() => setIsNavOpen(!isNavOpen)}
         toggleAside={() => setIsAsideOpen(!isAsideOpen)}

@@ -9,8 +9,7 @@ const Cadastro = () => {
 {/*  Left Panel (Brand/Info) - Hidden on mobile, visible on lg screens  */}
 <div className="hidden lg:flex lg:w-[55%] bg-tropical-mint flex-col justify-between p-unit-xl relative z-10 overflow-hidden">
 {/*  Decorative abstract shape in background  */}
-<div className="absolute -top-40 -left-40 w-[600px] h-[600px] rounded-full bg-white/10 blur-[100px] pointer-events-none"></div>
-<div className="absolute -bottom-40 -right-40 w-[500px] h-[500px] rounded-full bg-black/5 blur-[80px] pointer-events-none"></div>
+
 {/*  Top: Logo  */}
 <div className="flex items-center gap-3 relative z-20">
 <div className="w-10 h-10 bg-black rounded-lg flex items-center justify-center text-tropical-mint shadow-lg">

@@ -6,9 +6,9 @@
     <title>Tramply — MVP</title>
     <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link crossorigin href="https://fonts.gstatic.com" rel="preconnect" />
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600&family=Sora:wght@600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
-    <!-- Tailwind CDN — MESMO engine das telas Stitch para fidelidade visual total -->
+    <!-- Tailwind CDN — design tokens aligned to Tramply Design System v2 -->
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <script>
       tailwind.config = {
@@ -16,63 +16,66 @@
         theme: {
           extend: {
             colors: {
-              "background": "#000f3b",
-              "surface": "#000f3b",
-              "surface-dim": "#000f3b",
-              "surface-bright": "#293763",
-              "surface-container-lowest": "#000b30",
-              "surface-container-low": "#081843",
-              "surface-container": "#0d1d47",
-              "surface-container-high": "#192752",
-              "surface-container-highest": "#25325e",
-              "surface-variant": "#25325e",
-              "surface-tint": "#9bd3b2",
-              "on-surface": "#dce1ff",
-              "on-surface-variant": "#c0c9c1",
-              "on-background": "#dce1ff",
-              "inverse-surface": "#dce1ff",
-              "inverse-on-surface": "#202e59",
-              "primary": "#ffffff",
-              "on-primary": "#003822",
-              "primary-container": "#b7efcd",
-              "on-primary-container": "#3a6f53",
-              "primary-fixed": "#b7efcd",
-              "primary-fixed-dim": "#9bd3b2",
-              "on-primary-fixed": "#002112",
-              "on-primary-fixed-variant": "#1a5037",
-              "inverse-primary": "#34684d",
-              "secondary": "#bec2ff",
-              "on-secondary": "#272b5e",
-              "secondary-container": "#404479",
-              "on-secondary-container": "#b0b4f0",
-              "secondary-fixed": "#e0e0ff",
-              "secondary-fixed-dim": "#bec2ff",
-              "on-secondary-fixed": "#111548",
-              "on-secondary-fixed-variant": "#3e4276",
-              "tertiary": "#ffffff",
-              "on-tertiary": "#333122",
-              "tertiary-container": "#e9e2cd",
-              "on-tertiary-container": "#696453",
-              "tertiary-fixed": "#e9e2cd",
-              "tertiary-fixed-dim": "#cdc6b2",
-              "on-tertiary-fixed": "#1e1c0f",
-              "on-tertiary-fixed-variant": "#4a4737",
-              "error": "#ffb4ab",
-              "on-error": "#690005",
-              "error-container": "#93000a",
-              "on-error-container": "#ffdad6",
-              "outline": "#8a938c",
-              "outline-variant": "#404943",
-              "tropical-mint": "#4ff0aa",
-              "deep-navy": "#001242",
-              "eggshell": "#dbe1ff",
-              "medium-slate": "#6d77fa",
-              "black": "#000000"
+              "background":                "#080E1A",
+              "surface":                   "#0F1829",
+              "surface-dim":               "#080E1A",
+              "surface-bright":            "#1E2D45",
+              "surface-container-lowest":  "#080E1A",
+              "surface-container-low":     "#0B1322",
+              "surface-container":         "#0F1829",
+              "surface-container-high":    "#162035",
+              "surface-container-highest": "#1E2D45",
+              "surface-variant":           "#1E2D45",
+              "surface-tint":              "#00F5A0",
+              "on-surface":                "#F0F4FF",
+              "on-surface-variant":        "#8A9BBE",
+              "on-background":             "#F0F4FF",
+              "inverse-surface":           "#F0F4FF",
+              "inverse-on-surface":        "#080E1A",
+              "primary":                   "#00F5A0",
+              "on-primary":                "#080E1A",
+              "primary-container":         "#00C882",
+              "on-primary-container":      "#F0F4FF",
+              "primary-fixed":             "#00C882",
+              "primary-fixed-dim":         "#00F5A0",
+              "on-primary-fixed":          "#080E1A",
+              "on-primary-fixed-variant":  "#0F1829",
+              "inverse-primary":           "#00C882",
+              "secondary":                 "#3B82F6",
+              "on-secondary":              "#F0F4FF",
+              "secondary-container":       "#1E3A5F",
+              "on-secondary-container":    "#93C5FD",
+              "secondary-fixed":           "#DBEAFE",
+              "secondary-fixed-dim":       "#93C5FD",
+              "on-secondary-fixed":        "#1E3A5F",
+              "on-secondary-fixed-variant":"#2563EB",
+              "tertiary":                  "#F0F4FF",
+              "on-tertiary":               "#080E1A",
+              "tertiary-container":        "#1E2D45",
+              "on-tertiary-container":     "#8A9BBE",
+              "tertiary-fixed":            "#1E2D45",
+              "tertiary-fixed-dim":        "#162035",
+              "on-tertiary-fixed":         "#F0F4FF",
+              "on-tertiary-fixed-variant": "#8A9BBE",
+              "error":                     "#FF6B6B",
+              "on-error":                  "#F0F4FF",
+              "error-container":           "#7F1D1D",
+              "on-error-container":        "#FECACA",
+              "outline":                   "#4A5A7A",
+              "outline-variant":           "#1E2D45",
+              "tropical-mint":             "#00F5A0",
+              "deep-navy":                 "#0F1829",
+              "eggshell":                  "#F0F4FF",
+              "medium-slate":              "#8A9BBE",
+              "black":                     "#080E1A"
             },
             borderRadius: {
-              "DEFAULT": "0.25rem",
-              "lg": "0.5rem",
-              "xl": "0.75rem",
+              "DEFAULT": "0.5rem",
+              "sm":  "0.25rem",
+              "md":  "0.75rem",
+              "lg":  "1rem",
+              "xl":  "1.25rem",
+              "2xl": "1.5rem",
               "full": "9999px"
             },
             spacing: {
@@ -88,22 +91,22 @@
               "container-max": "1280px"
             },
             fontFamily: {
-              "headline-lg": ["Sora", "sans-serif"],
-              "headline-lg-mobile": ["Sora", "sans-serif"],
-              "headline-md": ["Sora", "sans-serif"],
-              "headline-sm": ["Sora", "sans-serif"],
-              "body-lg": ["Plus Jakarta Sans", "sans-serif"],
-              "body-sm": ["Plus Jakarta Sans", "sans-serif"],
-              "label-md": ["Plus Jakarta Sans", "sans-serif"]
+              "headline-lg":        ["Plus Jakarta Sans", "sans-serif"],
+              "headline-lg-mobile": ["Plus Jakarta Sans", "sans-serif"],
+              "headline-md":        ["Plus Jakarta Sans", "sans-serif"],
+              "headline-sm":        ["Plus Jakarta Sans", "sans-serif"],
+              "body-lg":            ["Plus Jakarta Sans", "sans-serif"],
+              "body-sm":            ["Plus Jakarta Sans", "sans-serif"],
+              "label-md":           ["Plus Jakarta Sans", "sans-serif"]
             },
             fontSize: {
-              "headline-lg": ["32px", { lineHeight: "40px", letterSpacing: "-0.02em", fontWeight: "700" }],
+              "headline-lg":        ["32px", { lineHeight: "40px", letterSpacing: "-0.02em", fontWeight: "700" }],
               "headline-lg-mobile": ["28px", { lineHeight: "36px", letterSpacing: "-0.02em", fontWeight: "700" }],
-              "headline-md": ["24px", { lineHeight: "32px", letterSpacing: "-0.01em", fontWeight: "600" }],
-              "headline-sm": ["20px", { lineHeight: "28px", fontWeight: "600" }],
-              "body-lg": ["16px", { lineHeight: "24px", fontWeight: "400" }],
-              "body-sm": ["14px", { lineHeight: "20px", fontWeight: "400" }],
-              "label-md": ["12px", { lineHeight: "16px", letterSpacing: "0.05em", fontWeight: "600" }]
+              "headline-md":        ["24px", { lineHeight: "32px", letterSpacing: "-0.01em", fontWeight: "600" }],
+              "headline-sm":        ["20px", { lineHeight: "28px", fontWeight: "600" }],
+              "body-lg":            ["15px", { lineHeight: "24px", fontWeight: "400" }],
+              "body-sm":            ["14px", { lineHeight: "20px", fontWeight: "400" }],
+              "label-md":           ["12px", { lineHeight: "16px", letterSpacing: "0.04em", fontWeight: "600" }]
             }
           }
         }
@@ -116,16 +119,9 @@
       .material-symbols-outlined[data-weight="fill"] {
         font-variation-settings: 'FILL' 1;
       }
-      ::-webkit-scrollbar { width: 6px; }
-      ::-webkit-scrollbar-track { background: #000b30; }
-      ::-webkit-scrollbar-thumb { background: #25325e; border-radius: 10px; }
-      ::-webkit-scrollbar-thumb:hover { background: #404479; }
-      .input-glow:focus-within {
-        box-shadow: inset 0 0 0 1px #4ff0aa, 0 0 12px rgba(79,240,170,0.15);
-      }
     </style>
   </head>
-  <body class="bg-background text-on-surface font-body-lg antialiased selection:bg-tropical-mint selection:text-black overflow-x-hidden min-h-screen">
+  <body class="bg-background text-on-surface font-body-lg antialiased selection:bg-tropical-mint/20 selection:text-eggshell overflow-x-hidden min-h-screen">
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>

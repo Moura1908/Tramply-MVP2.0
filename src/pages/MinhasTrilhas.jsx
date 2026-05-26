@@ -1,18 +1,17 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const MinhasTrilhas = () => {
+  const navigate = useNavigate();
   return (
     <>
 
-<h2 className="font-headline-lg-mobile md:font-headline-lg text-eggshell mb-8">12 - Tramply — Minhas Trilhas</h2>
+<h2 className="font-headline-lg-mobile md:font-headline-lg text-[28px] md:text-[32px] text-eggshell font-bold mb-8">Minhas Trilhas</h2>
 <div className="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
 {/*  Left Column (Trilhas)  */}
 <div className="lg:col-span-12 space-y-gutter">
 {/*  Trilha Principal Card  */}
 <div className="bg-surface-container rounded-xl p-6 border border-outline-variant/20 relative overflow-hidden group">
-{/*  Subtle Glow  */}
-<div className="absolute -top-24 -right-24 w-64 h-64 bg-tropical-mint/5 rounded-full blur-3xl pointer-events-none"></div>
 <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 relative z-10">
 <div>
 <h3 className="font-headline-md text-headline-md text-eggshell mb-1">Trilha: Crescer</h3>
@@ -28,7 +27,7 @@ const MinhasTrilhas = () => {
 <div className="h-full bg-tropical-mint rounded-full" style={{ width: "35%" }}></div>
 </div>
 {/*  Vertical Timeline  */}
-<div className="relative pl-4 space-y-8 before:absolute before:inset-y-2 before:left-[21px] before:w-[2px] before:bg-surface-variant z-10">
+<div className="relative pl-4 space-y-8 before:absolute before:inset-y-2 before:left-[21px] before:w-[2px] before:bg-surface-variant before:-z-10 z-10">
 {/*  Completed Module  */}
 <div className="relative flex items-start gap-4">
 <div className="absolute -left-4 w-8 h-8 rounded-full bg-surface-container flex items-center justify-center z-10">
@@ -41,7 +40,7 @@ const MinhasTrilhas = () => {
 </div>
 {/*  Current Module  */}
 <div className="relative flex items-start gap-4">
-<div className="absolute -left-4 w-8 h-8 rounded-full bg-deep-navy border-2 border-tropical-mint flex items-center justify-center z-10 shadow-[0_0_12px_rgba(79,240,170,0.2)]">
+<div className="absolute -left-4 w-8 h-8 rounded-full bg-deep-navy border-2 border-tropical-mint flex items-center justify-center z-10 shadow-sm">
 <div className="w-2.5 h-2.5 rounded-full bg-tropical-mint"></div>
 </div>
 <div className="ml-6 p-4 rounded-lg bg-surface-container-high border border-tropical-mint/30 w-full">
@@ -51,7 +50,7 @@ const MinhasTrilhas = () => {
 </div>
 <p className="font-headline-sm text-headline-sm text-eggshell mb-2">Precificação para MEI</p>
 <p className="font-body-sm text-body-sm text-on-surface-variant mb-4">Aprenda a calcular custos fixos, variáveis e definir uma margem de lucro sustentável.</p>
-<Link to="/modulo-de-trilha" className="bg-tropical-mint text-black font-label-md text-label-md px-6 py-2.5 rounded-full hover:shadow-[0_0_8px_rgba(79,240,170,0.3)] transition-all inline-block">Continuar Módulo</Link>
+<Link to="/modulo-de-trilha" className="bg-tropical-mint text-black font-label-md text-label-md px-6 py-2.5 rounded-full hover:bg-primary-container transition-all inline-block">Continuar Módulo</Link>
 </div>
 </div>
 {/*  Future Module  */}
@@ -81,7 +80,7 @@ const MinhasTrilhas = () => {
 <p className="font-body-sm text-body-sm text-on-surface-variant text-xs line-clamp-2">Separe as contas pessoais da empresa e construa um caixa saudável.</p>
 </div>
 </div>
-<button className="w-full mt-2 border border-medium-slate text-medium-slate font-label-md text-label-md py-2 rounded-full hover:bg-medium-slate/10 transition-colors">Explorar Trilha</button>
+<button onClick={() => navigate('/modulo-de-trilha')} className="w-full mt-2 border border-medium-slate text-medium-slate font-label-md text-label-md py-2 rounded-full hover:bg-medium-slate/10 hover:text-eggshell transition-all">Explorar Trilha</button>
 </div>
 {/*  Card 2  */}
 <div className="bg-surface-container-high rounded-xl p-5 border border-outline-variant/10 hover:border-medium-slate/50 transition-all flex flex-col justify-between group">
@@ -94,12 +93,12 @@ const MinhasTrilhas = () => {
 <p className="font-body-sm text-body-sm text-on-surface-variant text-xs line-clamp-2">Networking prático para encontrar parceiros e novos fornecedores.</p>
 </div>
 </div>
-<button className="w-full mt-2 border border-medium-slate text-medium-slate font-label-md text-label-md py-2 rounded-full hover:bg-medium-slate/10 transition-colors">Explorar Trilha</button>
+<button onClick={() => navigate('/modulo-de-trilha')} className="w-full mt-2 border border-medium-slate text-medium-slate font-label-md text-label-md py-2 rounded-full hover:bg-medium-slate/10 hover:text-eggshell transition-all">Explorar Trilha</button>
 </div>
 </div>
 </div>
 </div>
-
+</div>
     </>
   );
 };

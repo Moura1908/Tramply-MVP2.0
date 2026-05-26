@@ -1,54 +1,218 @@
-/* Tramply — Global Styles (minimal, CDN handles Tailwind) */
+/* ═══════════════════════════════════════════════════════════════
+   Tramply — Design System v2 (Premium Fintech Dark)
+   ═══════════════════════════════════════════════════════════════ */
 
-/* Ensure smooth transitions globally */
+/* ── Design Tokens ─────────────────────────────────────────── */
+:root {
+  --bg-base:          #0d0d0d;
+  --bg-surface:       #181818;
+  --bg-elevated:      #212121;
+  --bg-border:        #303030;
+  --accent-green:     #00a240;
+  --accent-green-dim: #04b84c;
+  --accent-blue:      #0169cc;
+  --text-primary:     #ffffff;
+  --text-secondary:   #8f8f8f;
+  --text-muted:       #5d5d5d;
+  --radius-card:      1.25rem;
+  --radius-btn:       0.75rem;
+  --transition-base:  all 0.15s ease;
+}
+
+/* ── Global Reset & Defaults ───────────────────────────────── */
 * {
   box-sizing: border-box;
 }
 
-/* Animation keyframes used by some screens */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--bg-base);
+  /* Textura de noise muito sutil para materialidade */
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
+}
+
+/* Force Plus Jakarta Sans globally (override any Sora remnants) */
+[class*="font-headline"],
+[class*="font-body"],
+[class*="font-label"],
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+}
+
+/* Hide alt text globally for broken images to prevent layout overlap */
+img {
+  color: transparent;
+}
+
+/* ── Scrollbar ─────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--bg-base); }
+::-webkit-scrollbar-thumb { background: var(--bg-border); border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
+
+/* ── Selection ──────────────────────────────────────────────── */
+::selection {
+  background: rgba(0, 245, 160, 0.25);
+  color: var(--text-primary);
+}
+
+/* ── Input Focus Glow ──────────────────────────────────────── */
+.input-glow:focus-within {
+  box-shadow: inset 0 0 0 1px var(--accent-green), 0 0 12px rgba(0, 245, 160, 0.12);
+}
+
+/* ── Select Dropdown ───────────────────────────────────────── */
+select option {
+  background-color: var(--bg-surface);
+  color: var(--text-secondary);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   ANIMATIONS
+   ═══════════════════════════════════════════════════════════════ */
+
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
-@keyframes pop-in {
-  0% { opacity: 0; transform: scale(0.8); }
-  100% { opacity: 1; transform: scale(1); }
-}
-
-@keyframes pulse-glow {
-  0%, 100% { box-shadow: 0 0 20px rgba(79,240,170,0.15); }
-  50% { box-shadow: 0 0 40px rgba(79,240,170,0.3); }
-}
-
-.animate-pop-in {
-  animation: pop-in 0.6s ease-out forwards;
-}
-
-.animate-pulse-glow {
-  animation: pulse-glow 2s ease-in-out infinite;
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes slideUp {
   from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+@keyframes pop-in {
+  0%   { opacity: 0; transform: scale(0.92); }
+  100% { opacity: 1; transform: scale(1); }
 }
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(0, 245, 160, 0.12); }
+  50%      { box-shadow: 0 0 36px rgba(0, 245, 160, 0.25); }
+}
+
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+.animate-pop-in {
+  animation: pop-in 0.5s ease-out forwards;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2.5s ease-in-out infinite;
+}
+
 .animate-fade-in-up {
-  animation: fadeInUp 0.6s ease-out forwards;
+  animation: fadeInUp 0.5s ease-out forwards;
 }
 
-/* UI FIXES */
-select option {
-  background-color: #000b30;
-  color: #c0c9c1;
+/* ── Staggered Card Entrance ───────────────────────────────── */
+.animate-stagger > * {
+  opacity: 0;
+  animation: fadeInUp 0.45s ease-out forwards;
 }
+.animate-stagger > *:nth-child(1) { animation-delay: 0ms; }
+.animate-stagger > *:nth-child(2) { animation-delay: 60ms; }
+.animate-stagger > *:nth-child(3) { animation-delay: 120ms; }
+.animate-stagger > *:nth-child(4) { animation-delay: 180ms; }
+.animate-stagger > *:nth-child(5) { animation-delay: 240ms; }
+.animate-stagger > *:nth-child(6) { animation-delay: 300ms; }
+.animate-stagger > *:nth-child(7) { animation-delay: 360ms; }
+.animate-stagger > *:nth-child(8) { animation-delay: 420ms; }
 
-/* Reduced robotic glow */
+/* ── Reduced glow on hover ─────────────────────────────────── */
 .glow-hover:hover {
-  box-shadow: 0 0 8px rgba(79, 240, 170, 0.2);
+  box-shadow: 0 0 8px rgba(0, 245, 160, 0.18);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   PROGRESS BAR — Gradient Fill
+   Apply green→blue gradient to all progress bar fills
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Target: thin rounded bars with bg-tropical-mint class = progress fills */
+.h-1\.5 > .bg-tropical-mint,
+.h-1 > .bg-tropical-mint,
+[class*="h-1"] > [class*="bg-tropical-mint"][class*="rounded-full"] {
+  background: linear-gradient(90deg, var(--accent-green), var(--accent-blue)) !important;
+  height: 6px !important;
+  border-radius: 999px;
+}
+
+/* The track */
+.h-1\.5[class*="rounded-full"],
+.h-1[class*="rounded-full"] {
+  height: 6px !important;
+  border-radius: 999px;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   GLOBAL BUTTON REFINEMENTS
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Primary CTA buttons — subtle lift on hover */
+.bg-tropical-mint:hover,
+[class*="bg-tropical-mint"]:hover {
+  transform: translateY(-1px);
+}
+
+/* Ensure all primary buttons have the correct border-radius */
+[class*="bg-tropical-mint"][class*="rounded-full"] {
+  border-radius: var(--radius-btn);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   TOGGLE SWITCH (Configuracoes)
+   ═══════════════════════════════════════════════════════════════ */
+
+.toggle-checkbox {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  position: absolute;
+}
+
+.toggle-label {
+  display: block;
+  width: 2.75rem;
+  height: 1.5rem;
+  border-radius: 9999px;
+  background-color: var(--bg-border);
+  position: relative;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.toggle-label::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 9999px;
+  background-color: var(--text-secondary);
+  transition: all 0.2s ease;
+}
+
+.toggle-checkbox:checked + .toggle-label {
+  background-color: var(--accent-green);
+}
+
+.toggle-checkbox:checked + .toggle-label::after {
+  transform: translateX(1.25rem);
+  background-color: #fff;
 }

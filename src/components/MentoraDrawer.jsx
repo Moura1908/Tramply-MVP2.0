@@ -32,7 +32,7 @@ const MentoraDrawer = ({ isOpen, close }) => {
   };
 
   return (
-    <aside className={`${isOpen ? 'translate-x-0' : 'translate-x-full'} transition-transform duration-300 fixed right-0 top-0 w-[300px] h-full rounded-l-xl bg-surface-container-high dark:bg-surface-container-high border-l border-outline-variant/20 shadow-2xl flex flex-col p-unit-md z-50 ease-out`}>
+    <aside className={`${isOpen ? 'translate-x-0' : 'translate-x-full'} transition-transform duration-300 fixed right-0 inset-y-0 w-[300px] rounded-l-xl bg-surface-container-high dark:bg-surface-container-high border-l border-outline-variant/20 shadow-2xl flex flex-col p-unit-md z-50 ease-out`}>
       {/* Drawer Header */}
       <div className="flex items-center gap-3 mb-6 p-2">
         <div className="w-12 h-12 rounded-full bg-deep-navy border border-tropical-mint/30 flex items-center justify-center relative shadow-[0_0_10px_rgba(79,240,170,0.2)]">

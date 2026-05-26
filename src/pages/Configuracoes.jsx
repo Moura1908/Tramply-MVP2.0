@@ -6,12 +6,12 @@ const Configuracoes = () => {
     <>
 
 <div className="mb-10">
-<h1 className="font-headline-lg text-headline-lg text-on-surface mb-2">27 - Tramply — Configurações</h1>
+<h1 className="font-headline-lg text-headline-lg text-on-surface mb-2">Configurações</h1>
 <p className="font-body-lg text-body-lg text-medium-slate">Gerencie suas preferências, segurança e assinatura.</p>
 </div>
 {/*  Custom Tab Navigation  */}
 <div className="flex gap-2 mb-8 border-b border-surface-container-highest pb-2 overflow-x-auto">
-<button className="px-6 py-2 rounded-full bg-surface-container-highest text-tropical-mint font-label-md text-label-md border border-tropical-mint/30 shadow-[0_0_8px_rgba(79,240,170,0.1)]">Conta</button>
+<button className="px-6 py-2 rounded-full bg-surface-container-highest text-tropical-mint font-label-md text-label-md border border-tropical-mint/30">Conta</button>
 <button className="px-6 py-2 rounded-full text-medium-slate font-label-md text-label-md hover:bg-surface-container-highest transition-colors">Notificações</button>
 <button className="px-6 py-2 rounded-full text-medium-slate font-label-md text-label-md hover:bg-surface-container-highest transition-colors">Segurança</button>
 <button className="px-6 py-2 rounded-full text-medium-slate font-label-md text-label-md hover:bg-surface-container-highest transition-colors">Assinatura</button>
@@ -30,7 +30,7 @@ const Configuracoes = () => {
 <p className="font-body-sm text-body-sm text-medium-slate">Ajuste a aparência do sistema</p>
 </div>
 <div className="relative inline-block w-11 h-6 align-middle select-none">
-<input checked="" className="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer z-10 opacity-0" id="dark-mode-toggle" name="toggle" type="checkbox" />
+<input defaultChecked aria-label="Ativar modo escuro" className="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer z-10 opacity-0" id="dark-mode-toggle" name="toggle" type="checkbox" />
 <label className="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer" htmlFor="dark-mode-toggle"></label>
 </div>
 </div>
@@ -50,7 +50,7 @@ const Configuracoes = () => {
 {/*  Assinatura Section  */}
 <section className="bg-surface-container-high rounded-xl p-unit-lg border border-surface-container-highest flex flex-col gap-6 relative overflow-hidden">
 {/*  Abstract bg pattern  */}
-<div className="absolute -right-10 -top-10 w-40 h-40 bg-tropical-mint/5 rounded-full blur-3xl pointer-events-none"></div>
+
 <div className="flex items-center gap-3 mb-2 z-10">
 <span className="material-symbols-outlined text-tropical-mint" data-icon="workspace_premium">workspace_premium</span>
 <h2 className="font-headline-sm text-headline-sm text-on-surface">Plano Atual</h2>
@@ -67,8 +67,8 @@ const Configuracoes = () => {
                         </li>
 </ul>
 </div>
-<button className="mt-auto w-full bg-tropical-mint text-black font-label-md text-label-md py-3 rounded-full hover:shadow-[0_0_12px_rgba(79,240,170,0.4)] transition-all z-10">
-                    Upgrade to Pro
+<button className="mt-auto w-full bg-tropical-mint text-black font-label-md text-label-md py-3 rounded-full hover:shadow-md transition-all z-10 font-bold">
+                    Evoluir para o Pro
                 </button>
 </section>
 {/*  Notificações Section (Spans full width below)  */}
@@ -85,7 +85,7 @@ const Configuracoes = () => {
 <span className="font-body-lg text-body-lg text-on-surface">Email</span>
 </div>
 <div className="relative inline-block w-11 h-6 align-middle select-none">
-<input checked="" className="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer z-10 opacity-0" id="email-toggle" name="toggle-email" type="checkbox" />
+<input defaultChecked aria-label="Ativar notificações por e-mail" className="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer z-10 opacity-0" id="email-toggle" name="toggle-email" type="checkbox" />
 <label className="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer" htmlFor="email-toggle"></label>
 </div>
 </div>
@@ -93,10 +93,10 @@ const Configuracoes = () => {
 <div className="bg-surface-container-highest rounded-xl p-4 flex items-center justify-between border border-transparent hover:border-surface-container-lowest transition-colors">
 <div className="flex items-center gap-3">
 <div className="p-2 bg-surface rounded-lg text-medium-slate"><span className="material-symbols-outlined" data-icon="sms">sms</span></div>
-<span className="font-body-lg text-body-lg text-on-surface">SMS Alerts</span>
+<span className="font-body-lg text-body-lg text-on-surface">SMS</span>
 </div>
 <div className="relative inline-block w-11 h-6 align-middle select-none">
-<input className="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer z-10 opacity-0" id="sms-toggle" name="toggle-sms" type="checkbox" />
+<input aria-label="Ativar notificações por SMS" className="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer z-10 opacity-0" id="sms-toggle" name="toggle-sms" type="checkbox" />
 <label className="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer" htmlFor="sms-toggle"></label>
 </div>
 </div>
@@ -107,7 +107,7 @@ const Configuracoes = () => {
 <span className="font-body-lg text-body-lg text-on-surface">Push Mobile</span>
 </div>
 <div className="relative inline-block w-11 h-6 align-middle select-none">
-<input checked="" className="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer z-10 opacity-0" id="push-toggle" name="toggle-push" type="checkbox" />
+<input defaultChecked aria-label="Ativar notificações push mobile" className="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer z-10 opacity-0" id="push-toggle" name="toggle-push" type="checkbox" />
 <label className="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer" htmlFor="push-toggle"></label>
 </div>
 </div>
