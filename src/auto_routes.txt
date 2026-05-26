@@ -1,0 +1,56 @@
+import AnáliseDeMEIsOportunidades from './pages/auto/AnáliseDeMEIsOportunidades';
+import BancosOportunidades from './pages/auto/BancosOportunidades';
+import Cadastro from './pages/auto/Cadastro';
+import CasoDeEstudoMEI from './pages/auto/CasoDeEstudoMEI';
+import ComunidadeOportunidades from './pages/auto/ComunidadeOportunidades';
+import ConclusãoDeMódulo from './pages/auto/ConclusãoDeMódulo';
+import Configurações from './pages/auto/Configurações';
+import DashboardAtivo from './pages/auto/DashboardAtivo';
+import DashboardSemTrilha from './pages/auto/DashboardSemTrilha';
+import EventosOportunidades from './pages/auto/EventosOportunidades';
+import FerramentasOportunidades from './pages/auto/FerramentasOportunidades';
+import Login from './pages/auto/Login';
+import MinhasTrilhas from './pages/auto/MinhasTrilhas';
+import MóduloDeTrilha from './pages/auto/MóduloDeTrilha';
+import PerfilDoEmpreendedor from './pages/auto/PerfilDoEmpreendedor';
+import QuizInício from './pages/auto/QuizInício';
+import QuizObjetivos from './pages/auto/QuizObjetivos';
+import QuizPerfilERitmo from './pages/auto/QuizPerfilERitmo';
+import QuizRespostaDaIA from './pages/auto/QuizRespostaDaIA';
+import QuizResultado from './pages/auto/QuizResultado';
+import QuizSetorDeAtuação from './pages/auto/QuizSetorDeAtuação';
+import QuizSituaçãoAtual from './pages/auto/QuizSituaçãoAtual';
+import SimuladorFinanceiroInício from './pages/auto/SimuladorFinanceiroInício';
+import SimuladorDeDespesasAnálise from './pages/auto/SimuladorDeDespesasAnálise';
+import SimuladorDeDespesasEntrada from './pages/auto/SimuladorDeDespesasEntrada';
+import SimuladorDeRendaEntrada from './pages/auto/SimuladorDeRendaEntrada';
+import SimuladorDeRendaResultado from './pages/auto/SimuladorDeRendaResultado';
+
+
+        <Route path="/análise-de-meis-oportunidades" element={<AnáliseDeMEIsOportunidades />} />
+        <Route path="/bancos-oportunidades" element={<BancosOportunidades />} />
+        <Route path="/cadastro" element={<Cadastro />} />
+        <Route path="/caso-de-estudo-mei" element={<CasoDeEstudoMEI />} />
+        <Route path="/comunidade-oportunidades" element={<ComunidadeOportunidades />} />
+        <Route path="/conclusão-de-módulo" element={<ConclusãoDeMódulo />} />
+        <Route path="/configurações" element={<Configurações />} />
+        <Route path="/dashboard-ativo" element={<DashboardAtivo />} />
+        <Route path="/dashboard-sem-trilha" element={<DashboardSemTrilha />} />
+        <Route path="/eventos-oportunidades" element={<EventosOportunidades />} />
+        <Route path="/ferramentas-oportunidades" element={<FerramentasOportunidades />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/minhas-trilhas" element={<MinhasTrilhas />} />
+        <Route path="/módulo-de-trilha" element={<MóduloDeTrilha />} />
+        <Route path="/perfil-do-empreendedor" element={<PerfilDoEmpreendedor />} />
+        <Route path="/quiz-início" element={<QuizInício />} />
+        <Route path="/quiz-objetivos" element={<QuizObjetivos />} />
+        <Route path="/quiz-perfil-e-ritmo" element={<QuizPerfilERitmo />} />
+        <Route path="/quiz-resposta-da-ia" element={<QuizRespostaDaIA />} />
+        <Route path="/quiz-resultado" element={<QuizResultado />} />
+        <Route path="/quiz-setor-de-atuação" element={<QuizSetorDeAtuação />} />
+        <Route path="/quiz-situação-atual" element={<QuizSituaçãoAtual />} />
+        <Route path="/simulador-financeiro-início" element={<SimuladorFinanceiroInício />} />
+        <Route path="/simulador-de-despesas-análise" element={<SimuladorDeDespesasAnálise />} />
+        <Route path="/simulador-de-despesas-entrada" element={<SimuladorDeDespesasEntrada />} />
+        <Route path="/simulador-de-renda-entrada" element={<SimuladorDeRendaEntrada />} />
+        <Route path="/simulador-de-renda-resultado" element={<SimuladorDeRendaResultado />} />

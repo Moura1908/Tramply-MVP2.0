@@ -1,0 +1,54 @@
+/* Tramply — Global Styles (minimal, CDN handles Tailwind) */
+
+/* Ensure smooth transitions globally */
+* {
+  box-sizing: border-box;
+}
+
+/* Animation keyframes used by some screens */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pop-in {
+  0% { opacity: 0; transform: scale(0.8); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(79,240,170,0.15); }
+  50% { box-shadow: 0 0 40px rgba(79,240,170,0.3); }
+}
+
+.animate-pop-in {
+  animation: pop-in 0.6s ease-out forwards;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+/* UI FIXES */
+select option {
+  background-color: #000b30;
+  color: #c0c9c1;
+}
+
+/* Reduced robotic glow */
+.glow-hover:hover {
+  box-shadow: 0 0 8px rgba(79, 240, 170, 0.2);
+}
