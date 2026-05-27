@@ -10,7 +10,7 @@ A **Tramply** nasceu com o objetivo de apoiar o MEI em sua jornada, oferecendo u
 
 Este repositório contém o **Protótipo de Alta Fidelidade (MVP)** desenvolvido para apresentação acadêmica e validação de conceito. O foco do projeto foi construir uma experiência do usuário (UX) intuitiva, humanizada e livre de fricções, ajudando pequenos empreendedores a formalizar, gerir e expandir seus negócios.
 
-Link: https://tramply-mvp-2-0.vercel.app
+Link: https://tramply-mvp-2-0.vercel.app/
 
 ---
 
